@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup_p2"
+    android:layout_width="520dp"
+    android:layout_height="700dp"
+    android:background="@drawable/finicio"
+    android:scrollbarSize="50sp"
+    tools:context=".Popup_p1"
+    tools:ignore="ExtraText">
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="279dp"
+        android:layout_height="127dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="129dp"
+        android:fontFamily="@font/redressed"
+        android:text="Jack ha caído en el planeta Dank. Ahora responde la siguiente ecuación para que Jack pueda tomar un atajo y escapar de Hynu."
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="179dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="264dp"
+        android:layout_marginEnd="284dp"
+        android:fontFamily="@font/redressed"
+        android:text="Hallar el valor de X"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="193dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="280dp"
+        android:fontFamily="@font/redressed"
+        android:text="X^2+8X+16"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/res2"
+        android:layout_width="59dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="342dp"
+        android:layout_marginEnd="274dp"
+        android:fontFamily="@font/redressed"
+        android:text="8"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/res"
+        android:layout_width="59dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="345dp"
+        android:fontFamily="@font/redressed"
+        android:text="4"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/res1"
+        android:layout_width="59dp"
+        android:layout_height="64dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="343dp"
+        android:layout_marginEnd="417dp"
+        android:fontFamily="@font/redressed"
+        android:text="2"
+        android:textAlignment="center"
+        app:autoSizeTextType="uniform" />
+
+    <ImageView
+        android:id="@+id/icon_res"
+        android:layout_width="125dp"
+        android:layout_height="122dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="310dp"
+        app:srcCompat="@drawable/icon_error" />
+</RelativeLayout>

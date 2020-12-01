@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/principal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".principal">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp">
+
+        <ImageView
+            android:id="@+id/btnajustes"
+            android:layout_width="413dp"
+            android:layout_height="758dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="-1dp"
+            android:layout_marginTop="-35dp"
+            android:layout_marginEnd="-1dp"
+            android:layout_marginBottom="-61dp"
+            app:srcCompat="@drawable/finicio" />
+
+        <ImageView
+            android:id="@+id/btnplay"
+            android:layout_width="148sp"
+            android:layout_height="156dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="113dp"
+            app:srcCompat="@drawable/play" />
+
+        <ImageView
+            android:id="@+id/btnhistoria"
+            android:layout_width="148dp"
+            android:layout_height="156dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="164dp"
+            android:layout_marginTop="205dp"
+            app:srcCompat="@drawable/historia" />
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="148dp"
+            android:layout_height="156dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="43dp"
+            android:layout_marginTop="300dp"
+            app:srcCompat="@drawable/ajustes" />
+
+        <ImageView
+            android:id="@+id/btnmusica"
+            android:layout_width="148dp"
+            android:layout_height="156dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="168dp"
+            android:layout_marginTop="395dp"
+            app:srcCompat="@drawable/musica" />
+
+        <ImageView
+            android:id="@+id/iconfb"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="59dp"
+            android:layout_marginBottom="4dp"
+            app:srcCompat="@drawable/fb" />
+
+        <ImageView
+            android:id="@+id/iconing"
+            android:layout_width="66dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="7dp"
+            app:srcCompat="@drawable/ing" />
+
+        <ImageView
+            android:id="@+id/lblfb"
+            android:layout_width="61dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="55dp"
+            android:layout_marginBottom="3dp"
+            app:srcCompat="@drawable/lblfb" />
+
+        <ImageView
+            android:id="@+id/lbling"
+            android:layout_width="62dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginBottom="2dp"
+            app:srcCompat="@drawable/lbling" />
+
+        <ImageView
+            android:id="@+id/lblcopy"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="11dp"
+            android:layout_marginBottom="1dp"
+            app:srcCompat="@drawable/copy" />
+
+        <ImageView
+            android:id="@+id/imageView10"
+            android:layout_width="163dp"
+            android:layout_height="72dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="109dp"
+            android:layout_marginTop="41dp"
+            app:srcCompat="@drawable/logo" />
+    </RelativeLayout>
+</RelativeLayout>
