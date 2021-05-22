@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup_p4"
+    android:layout_width="520dp"
+    android:layout_height="700dp"
+    android:scrollbarSize="50sp"
+    tools:context=".Popup_p4"
+    tools:ignore="ExtraText">
+
+
+
+
+
+
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="309dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="211dp"
+        android:layout_marginBottom="220dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/fondopop45" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="317dp"
+        android:layout_height="484dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="203dp"
+        android:layout_marginBottom="216dp"
+        android:background="#92000000" />
+
+    <Button
+        android:id="@+id/ri1"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="158dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="338dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="324dp"
+        android:fontFamily="@font/redressed"
+        android:text="(x-4)(x+1)"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#63C3C1C1"
+        app:iconTint="#56000000" />
+
+    <Button
+        android:id="@+id/rc"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="158dp"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="423dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="241dp"
+        android:fontFamily="@font/redressed"
+        android:text="(x+2)(x+1)"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#63C3C1C1"
+        app:iconTint="#56000000" />
+
+    <Button
+        android:id="@+id/ri2"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="158dp"
+        android:layout_height="36dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="381dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="283dp"
+        android:fontFamily="@font/redressed"
+        android:text="(x+4)(x+1)"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#63C3C1C1"
+        app:iconTint="#56000000" />
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="279dp"
+        android:layout_height="127dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="122dp"
+        android:fontFamily="@font/redressed"
+        android:text="Ten cuidado!                                         has caido en el agujero sucionador  para salvarte debes responder lo siguiente:"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="179dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="256dp"
+        android:layout_marginEnd="283dp"
+        android:fontFamily="@font/redressed"
+        android:text="factoriza"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="193dp"
+        android:layout_height="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="290dp"
+        android:layout_marginEnd="277dp"
+        android:fontFamily="@font/redressed"
+        android:text="x^2+3x+2"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <ImageView
+        android:id="@+id/icon_res"
+        android:layout_width="122dp"
+        android:layout_height="106dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="92dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="306dp"
+        android:layout_marginBottom="574dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/icon_error" />
+
+
+</RelativeLayout>
