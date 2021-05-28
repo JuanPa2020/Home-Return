@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.prueba">
 
     <application
@@ -9,13 +10,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Prueba">
-        <activity android:name=".principal"></activity>
-        <activity android:name=".Popup_p1"
-            android:theme="@style/AppCompat.popup"/>
-        <activity android:name=".Popup_p2"
-            android:theme="@style/AppCompat.popup"/>
-        <activity android:name=".Escalera"
-            android:theme="@style/AppCompat.popup"/>
+        <activity
+            android:name=".Acercade"
+            android:theme="@style/AppCompat.popup"
+        />
+        <activity android:name=".Historia" />
+        <activity
+            android:name=".Musica"
+            android:theme="@style/AppCompat.popup" />
+        <activity
+            android:name=".Ajustes"
+            android:theme="@style/AppCompat.popup" />
+        <activity android:name=".principal" />
+        <activity
+            android:name=".Popup_p1"
+            android:theme="@style/AppCompat.popup" />
+        <activity
+            android:name=".Popup_p2"
+            android:theme="@style/AppCompat.popup" />
+        <activity
+            android:name=".Popup_p3"
+            android:theme="@style/AppCompat.popup" />
+        <activity
+            android:name=".Popup_p4"
+            android:theme="@style/AppCompat.popup" />
+        <activity
+            android:name=".Popup_p5"
+            android:theme="@style/AppCompat.popup" />
+        <activity
+            android:name=".Popup_p6"
+            android:theme="@style/AppCompat.popup" />
+        <activity
+            android:name=".Escalera"
+            android:theme="@style/Theme.Prueba" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

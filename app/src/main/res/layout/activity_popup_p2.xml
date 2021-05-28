@@ -5,23 +5,99 @@
     android:id="@+id/popup_p2"
     android:layout_width="520dp"
     android:layout_height="700dp"
-    android:background="@drawable/finicio"
     android:scrollbarSize="50sp"
     tools:context=".Popup_p1"
     tools:ignore="ExtraText">
 
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="315dp"
+        android:layout_height="498dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-8dp"
+        android:layout_marginTop="-20dp"
+        android:layout_marginEnd="213dp"
+        android:layout_marginBottom="222dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/fondopop2" />
+
+    <Button
+        android:id="@+id/rs"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="347dp"
+        android:layout_marginEnd="427dp"
+        android:layout_marginBottom="306dp"
+        android:fontFamily="@font/redressed"
+        android:text="2"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#92000000"
+        app:iconTint="#56000000" />
+
+    <Button
+        android:id="@+id/rs1"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="112dp"
+        android:layout_marginTop="347dp"
+        android:layout_marginEnd="358dp"
+        android:layout_marginBottom="306dp"
+        android:fontFamily="@font/redressed"
+        android:text="5"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#92000000"
+        app:iconTint="#56000000" />
+
+    <Button
+        android:id="@+id/rs2"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="50dp"
+        android:layout_height="47dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="189dp"
+        android:layout_marginTop="347dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginBottom="306dp"
+        android:fontFamily="@font/redressed"
+        android:text="12"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#92000000"
+        app:iconTint="#56000000" />
+
     <TextView
         android:id="@+id/txt1"
-        android:layout_width="279dp"
-        android:layout_height="127dp"
+        android:layout_width="281dp"
+        android:layout_height="133dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="11dp"
         android:layout_marginTop="129dp"
         android:fontFamily="@font/redressed"
-        android:text="Jack ha caído en el planeta Dank. Ahora responde la siguiente ecuación para que Jack pueda tomar un atajo y escapar de Hynu."
+        android:text="Jack agotado a encontrado el planeta Deawoo con posibilidad de tomar un atajo y alejarse de Hynuu para esto debe :"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:autoSizeTextType="uniform" />
 
     <TextView
@@ -36,6 +112,7 @@
         android:fontFamily="@font/redressed"
         android:text="Hallar el valor de X"
         android:textAlignment="center"
+        android:textColor="@color/white"
         app:autoSizeTextType="uniform" />
 
     <TextView
@@ -48,57 +125,21 @@
         android:layout_marginTop="298dp"
         android:layout_marginEnd="280dp"
         android:fontFamily="@font/redressed"
-        android:text="X^2+8X+16"
+        android:text="20-7x=6x-6"
         android:textAlignment="center"
-        app:autoSizeTextType="uniform" />
-
-    <TextView
-        android:id="@+id/res2"
-        android:layout_width="59dp"
-        android:layout_height="64dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="342dp"
-        android:layout_marginEnd="274dp"
-        android:fontFamily="@font/redressed"
-        android:text="8"
-        android:textAlignment="center"
-        app:autoSizeTextType="uniform" />
-
-    <TextView
-        android:id="@+id/res"
-        android:layout_width="59dp"
-        android:layout_height="64dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="343dp"
-        android:layout_marginEnd="345dp"
-        android:fontFamily="@font/redressed"
-        android:text="4"
-        android:textAlignment="center"
-        app:autoSizeTextType="uniform" />
-
-    <TextView
-        android:id="@+id/res1"
-        android:layout_width="59dp"
-        android:layout_height="64dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="343dp"
-        android:layout_marginEnd="417dp"
-        android:fontFamily="@font/redressed"
-        android:text="2"
-        android:textAlignment="center"
+        android:textColor="@color/white"
         app:autoSizeTextType="uniform" />
 
     <ImageView
         android:id="@+id/icon_res"
-        android:layout_width="125dp"
-        android:layout_height="122dp"
+        android:layout_width="121dp"
+        android:layout_height="101dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="310dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="309dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
         app:srcCompat="@drawable/icon_error" />
+
 </RelativeLayout>

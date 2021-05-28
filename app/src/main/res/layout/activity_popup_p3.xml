@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/popup_p3"
+    android:layout_width="520dp"
+    android:layout_height="700dp"
+    android:animateLayoutChanges="?android:attr/windowOverscan"
+    android:scrollbarSize="50sp"
+    tools:context=".Popup_p3"
+    tools:ignore="ExtraText">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="309dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="211dp"
+        android:layout_marginBottom="220dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/fondopop3" />
+
+    <ImageView
+        android:id="@+id/acerca"
+        android:layout_width="317dp"
+        android:layout_height="484dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="203dp"
+        android:layout_marginBottom="216dp"
+        android:background="#60000000" />
+
+    <Button
+        android:id="@+id/r1"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="158dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="77dp"
+        android:layout_marginTop="338dp"
+        android:layout_marginEnd="285dp"
+        android:layout_marginBottom="324dp"
+        android:fontFamily="@font/redressed"
+        android:text="5(m^2+2m)"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#63C3C1C1"
+        app:iconTint="#56000000" />
+
+    <Button
+        android:id="@+id/r"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="158dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="416dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="246dp"
+        android:fontFamily="@font/redressed"
+        android:text="5m(m-2)"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#63C3C1C1"
+        app:iconTint="#56000000" />
+
+    <Button
+        android:id="@+id/r2"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="158dp"
+        android:layout_height="38dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="76dp"
+        android:layout_marginTop="377dp"
+        android:layout_marginEnd="286dp"
+        android:layout_marginBottom="285dp"
+        android:fontFamily="@font/redressed"
+        android:text="5m(m+2m)"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform"
+        app:backgroundTint="#63C3C1C1"
+        app:iconTint="#56000000" />
+
+    <TextView
+        android:id="@+id/txt1"
+        android:layout_width="279dp"
+        android:layout_height="127dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="122dp"
+        android:fontFamily="@font/redressed"
+        android:text="Haz llegado al planeta Brinz tendras la posibilidad de tomar un atajo y estar mas cerca de llegar a tu hogar y derrotar al terrible Hynu."
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/txt2"
+        android:layout_width="179dp"
+        android:layout_height="30dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="251dp"
+        android:layout_marginEnd="278dp"
+        android:fontFamily="@font/redressed"
+        android:text="Factoriza"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <TextView
+        android:id="@+id/txt3"
+        android:layout_width="246dp"
+        android:layout_height="38dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="289dp"
+        android:layout_marginEnd="235dp"
+        android:fontFamily="@font/redressed"
+        android:text="5m^2-10m"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        app:autoSizeTextType="uniform" />
+
+    <ImageView
+        android:id="@+id/icon_res"
+        android:layout_width="123dp"
+        android:layout_height="102dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="306dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/icon_error" />
+
+
+</RelativeLayout>
