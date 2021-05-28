@@ -36,7 +36,7 @@ class Escalera : AppCompatActivity() {
         hynu = findViewById(id.hynu)
         dank = findViewById(id.dank)
         val diceImages = mutableListOf(d1, d2, d3, d4, d5, d6)
-        val lanzamiento1 = mutableListOf<Int>(d1, d2, d3, d4, d5, d6)
+        /*val lanzamiento1 = mutableListOf<Int>(d1, d2, d3, d4, d5, d6)*/
         val imgq = mutableListOf<Int>(m1, m2, m3, m4, m5, m6)
 
 
@@ -117,32 +117,33 @@ class Escalera : AppCompatActivity() {
             if (dado_player.isPressed) {
                 if (turno == 0) {
                     //nueva posicion
+                    Toast.makeText(this, "Hynu avanza " + random + " casillas", Toast.LENGTH_SHORT).show()
                     posj1 += random
                     for (i in casillas) {
-                        Toast.makeText(this, "Hynu avanza " + random + " casillas", Toast.LENGTH_SHORT).show()
                         //exacto una variable alien
                         hynu = casillas[posj1 - 1]
                         hynu.setImageResource(drawable.hynu)
+                        dank.setImageResource(imgcasillas[posj2 - 1])
                     }
                     casilla_point()
                 }
             }
-            var randonm = Random().nextInt(5) + 1
+
             if (dado_maquina.isPressed) {
                 if (turnom == 1) {
                     //nueva posicion
-                    posj2 += randonm
-                    Toast.makeText(this, "Dank avanza "+randonm+" casillas", Toast.LENGTH_SHORT).show()
+                    posj2 += random1
+                    Toast.makeText(this, "Dank avanza "+random1+" casillas", Toast.LENGTH_SHORT).show()
                     for (i in casillas) {
                         //exacto una variable alien
                         dank = casillas[posj2 - 1]
                         dank.setImageResource(drawable.dank)
                         hynu.setImageResource(imgcasillas[posj1 - 1])
-                        if(casillas[posj2 - 1] == casillas[posj1 - 1]) {
+                        /*if(casillas[posj2 - 1] == casillas[posj1 - 1]) {
                             Toast.makeText(this, "Dank te alcanzo retrosede 3 casilla", Toast.LENGTH_SHORT).show()
                             hynu = casillas[posj1 - 1]
                             hynu.setImageResource(drawable.hynu)
-                        }
+                        }*/
                     }
                 }
             }
@@ -150,9 +151,9 @@ class Escalera : AppCompatActivity() {
 
         // -----------------------------------------------------------------------------------------------------------------------------------------------------------------
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+        /*
         fun get_img_primerlanzamiento() {
-            random1 = Random().nextInt(5) + 1
+            random1=dado()
             // start the animation
             primer_lanzamiento.startAnimation(animation)
 
@@ -175,11 +176,11 @@ class Escalera : AppCompatActivity() {
                 }
             })
         }
-
+        */
         // -----------------------------------------------------------------------------------------------------------------------------------------------------------------
         // -----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        fun get_img_dadoplayer(functionfinal:()->Unit) {
+        fun get_img_dadoplayer() {
             random=dado()
             // start the animation
             dado_player.startAnimation(animation)
@@ -192,8 +193,8 @@ class Escalera : AppCompatActivity() {
 
                 override fun onAnimationEnd(p0: Animation?) {
                     // when animation ends we will set the dice image
-                    dado_player.setImageResource(diceImages.elementAt(random)) // this will set the dice image randomly
-                    functionfinal()
+                    dado_player.setImageResource(diceImages.elementAt(dado())) // this will set the dice image randomly
+
                     // enable the button click
                 }
 
@@ -208,7 +209,7 @@ class Escalera : AppCompatActivity() {
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         fun get_img_dadomaquina() {
-            var randonm = Random().nextInt(5) + 1
+            random1 = dado()
             // start the animation
             dado_maquina.startAnimation(animationm)
 
@@ -220,7 +221,8 @@ class Escalera : AppCompatActivity() {
 
                 override fun onAnimationEnd(p0: Animation?) {
                     // when animation ends we will set the dice image
-                    dado_maquina.setImageResource(imgq.elementAt(randonm)) // this will set the dice image randomly
+
+                    dado_maquina.setImageResource(imgq.elementAt(dado())) // this will set the dice image randomly
                     // enable the button
                 }
 
@@ -243,11 +245,9 @@ class Escalera : AppCompatActivity() {
         //volver a principal
         val btn_dadoplayer = findViewById<ImageView>(id.dado_player)
         btn_dadoplayer.setOnClickListener {
-            get_img_dadoplayer {
+            get_img_dadoplayer ()
                 mover(hynu)
                 QuitarDadoPlayer()
-            }
-
         }
         val ms = findViewById<ImageView>(R.id.musica)
         ms.setOnClickListener {
@@ -266,7 +266,7 @@ class Escalera : AppCompatActivity() {
             mover(dank)
             QuitarDadoMaquina()
         }
-        val btn_firstlanzamiento = findViewById<ImageView>(id.primer_lanzamiento)
+        /*val btn_firstlanzamiento = findViewById<ImageView>(id.primer_lanzamiento)
         btn_firstlanzamiento.setOnClickListener {
             random1 = Random().nextInt(5) + 1
             get_img_primerlanzamiento()
@@ -280,7 +280,7 @@ class Escalera : AppCompatActivity() {
                     Toast.makeText(this, "Hynu necesita 5 para salir", Toast.LENGTH_SHORT).show()
                 }
             }
-        }
+        }*/
 
 
     }
@@ -290,6 +290,8 @@ class Escalera : AppCompatActivity() {
         Log.d("MiLog", random.toString())
         return random
     }
+
+
 }
 
 
