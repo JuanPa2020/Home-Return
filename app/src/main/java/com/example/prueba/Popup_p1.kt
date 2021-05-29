@@ -1,5 +1,7 @@
 package com.example.prueba
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.widget.ImageView
@@ -22,19 +24,16 @@ class Popup_p1 : AppCompatActivity() {
         val r1= findViewById<Button>(R.id.res)
         r1.setOnClickListener {
             respuesta()
-            onBackPressed()
         }
         // Respuesta 2
         val r2= findViewById<Button>(R.id.res1)
         r2.setOnClickListener {
             respuesta()
-            onBackPressed()
         }
         // Respuesta 3
         val r3= findViewById<Button>(R.id.res2)
         r3.setOnClickListener {
             respuesta()
-            onBackPressed()
         }
     }
 
@@ -45,17 +44,17 @@ class Popup_p1 : AppCompatActivity() {
             Toast.makeText(this, "¡Es correcto!", Toast.LENGTH_SHORT).show()
             res1.isEnabled=false
             res2.isEnabled=false
-        }else if (res1.isPressed){
+        }else if (res1.isPressed || res2.isPressed){
             resp.setImageResource(R.drawable.icon_error)
             Toast.makeText(this, "Respuesta erronea", Toast.LENGTH_SHORT).show()
             res.isEnabled=false
             res2.isEnabled=false
-        }else if (res2.isPressed){
-            resp.setImageResource(R.drawable.icon_error)
-            Toast.makeText(this, "Respuesta erronea", Toast.LENGTH_SHORT).show()
-            res.isEnabled=false
-            res1.isEnabled=false
         }
+
+        val intent = Intent();
+        intent.putExtra("result", res.isPressed);
+        setResult(Activity.RESULT_OK, intent)
+        finish()
     }
 
 }
