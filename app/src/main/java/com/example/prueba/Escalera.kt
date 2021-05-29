@@ -139,11 +139,11 @@ class Escalera : AppCompatActivity() {
                         dank = casillas[posj2 - 1]
                         dank.setImageResource(drawable.dank)
                         hynu.setImageResource(imgcasillas[posj1 - 1])
-                        /*if(casillas[posj2 - 1] == casillas[posj1 - 1]) {
+                        if(casillas[posj2 - 1] == casillas[posj1 - 1]) {
                             Toast.makeText(this, "Dank te alcanzo retrosede 3 casilla", Toast.LENGTH_SHORT).show()
                             hynu = casillas[posj1 - 1]
                             hynu.setImageResource(drawable.hynu)
-                        }*/
+                        }
                     }
                 }
             }
@@ -193,7 +193,7 @@ class Escalera : AppCompatActivity() {
 
                 override fun onAnimationEnd(p0: Animation?) {
                     // when animation ends we will set the dice image
-                    dado_player.setImageResource(diceImages.elementAt(dado())) // this will set the dice image randomly
+                    dado_player.setImageResource(diceImages.elementAt(random)) // this will set the dice image randomly
 
                     // enable the button click
                 }
@@ -222,7 +222,7 @@ class Escalera : AppCompatActivity() {
                 override fun onAnimationEnd(p0: Animation?) {
                     // when animation ends we will set the dice image
 
-                    dado_maquina.setImageResource(imgq.elementAt(dado())) // this will set the dice image randomly
+                    dado_maquina.setImageResource(imgq.elementAt(random1)) // this will set the dice image randomly
                     // enable the button
                 }
 
@@ -285,7 +285,6 @@ class Escalera : AppCompatActivity() {
 
     }
     fun dado():Int{
-
         var random =Random().nextInt(5) + 1
         Log.d("MiLog", random.toString())
         return random
