@@ -10,13 +10,13 @@ import android.view.animation.AnimationUtils
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.isVisible
 import com.example.prueba.*
 import com.example.prueba.R.*
 import com.example.prueba.R.drawable.*
 import kotlinx.android.synthetic.main.activity_escalera.*
 import java.util.*
-import kotlin.concurrent.thread
+import kotlin.math.log
+import kotlin.math.log2
 
 
 class Escalera : AppCompatActivity() {
@@ -63,11 +63,16 @@ class Escalera : AppCompatActivity() {
         fun QuitarDadoMaquina() {
             dado_player.isEnabled = true
             dado_maquina.isEnabled = false
+            Log.d("QuitarDadoMaq", dado_player.toString())
+            Log.d("QuitarDadoMaq", dado_maquina.toString())
         }
 
         fun QuitarDadoPlayer() {
             dado_player.isEnabled = false
             dado_maquina.isEnabled = true
+            Log.d("QuitarDadopla", dado_player.toString())
+            Log.d("QuitarDadopla", dado_maquina.toString())
+
         }
 
         //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -285,7 +290,6 @@ class Escalera : AppCompatActivity() {
                 }
             }
         }*/
-
 
     }
     fun dado():Int{
