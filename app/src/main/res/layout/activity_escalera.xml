@@ -40,27 +40,13 @@
         android:id="@+id/dado_player"
         android:layout_width="39dp"
         android:layout_height="38dp"
-        android:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
-        app:srcCompat="@drawable/lanzar"
-        tools:ignore="MissingConstraints,OnClick" />
-
-    <ImageView
-        android:id="@+id/primer_lanzamiento"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.212"
+        app:layout_constraintHorizontal_bias="0.139"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.873"
+        app:layout_constraintVertical_bias="0.942"
         app:srcCompat="@drawable/lanzar"
         tools:ignore="MissingConstraints,OnClick" />
 
@@ -68,27 +54,41 @@
         android:id="@+id/dado_maquina"
         android:layout_width="39dp"
         android:layout_height="37dp"
-        android:visibility="visible"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintHorizontal_bias="0.037"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.954"
+        app:layout_constraintVertical_bias="0.94"
         app:srcCompat="@drawable/ml"
         tools:ignore="MissingConstraints,OnClick" />
 
     <ImageView
-        android:id="@+id/imageView11"
+        android:id="@+id/primer_lanzamiento"
+        android:layout_width="56dp"
+        android:layout_height="51dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.067"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.953"
+        app:srcCompat="@drawable/lanzar"
+        tools:ignore="MissingConstraints,OnClick" />
+
+    <ImageView
+        android:id="@+id/s31"
         android:layout_width="166dp"
         android:layout_height="189dp"
+        android:background="@drawable/planeta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.925"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.078"
-        app:srcCompat="@drawable/planeta" />
+        app:layout_constraintVertical_bias="0.078" />
 
     <ImageView
         android:id="@+id/s28"

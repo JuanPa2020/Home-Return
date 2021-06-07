@@ -1,5 +1,7 @@
 package com.example.prueba
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.widget.ImageView
@@ -45,17 +47,16 @@ class Popup_p3 : AppCompatActivity() {
             Toast.makeText(this, "¡Es correcto!", Toast.LENGTH_SHORT).show()
             r1.isEnabled=false
             r2.isEnabled=false
-        }else if (r1.isPressed){
+        }else if (r1.isPressed||r2.isPressed){
             resp.setImageResource(R.drawable.icon_error)
             Toast.makeText(this, "Respuesta erronea", Toast.LENGTH_SHORT).show()
             r.isEnabled=false
             r2.isEnabled=false
-        }else if (r2.isPressed){
-            resp.setImageResource(R.drawable.icon_error)
-            Toast.makeText(this, "Respuesta erronea", Toast.LENGTH_SHORT).show()
-            r.isEnabled=false
-            r1.isEnabled=false
         }
+        val intent = Intent();
+        intent.putExtra("result", r.isPressed);
+        setResult(Activity.RESULT_OK, intent)
+        finish()
     }
 
 }
