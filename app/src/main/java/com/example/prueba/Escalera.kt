@@ -17,6 +17,7 @@ import com.example.prueba.R.*
 import com.example.prueba.R.drawable.*
 import kotlinx.android.synthetic.main.activity_escalera.*
 import java.util.*
+import kotlin.concurrent.thread
 import kotlin.math.log
 import kotlin.math.log2
 
@@ -61,7 +62,7 @@ class Escalera : AppCompatActivity() {
 
     fun dado():Int{
 
-        var random =Random().nextInt(1) + 1
+        var random =Random().nextInt(5) + 1
         Log.d("MiLog", random.toString())
         return random
     }
@@ -75,10 +76,10 @@ class Escalera : AppCompatActivity() {
     }
 
     fun QuitarDadoPlayer() {
-        dado_player.isEnabled = false
+        /*dado_player.isEnabled = false
         dado_maquina.isEnabled = true
         Log.d("QuitarDadopla", dado_player.toString())
-        Log.d("QuitarDadopla", dado_maquina.toString())
+        Log.d("QuitarDadopla", dado_maquina.toString())*/
 
 
     }
@@ -92,31 +93,40 @@ class Escalera : AppCompatActivity() {
                 val pop1 = Intent(this, Popup_p1::class.java)
                 Toast.makeText(this, "Caiste en el planeta Dankn", Toast.LENGTH_SHORT).show()
                 startActivityForResult(pop1, 0)
+                hynu.setImageResource(imgcasillas[posj1])
+
             }
             7 -> {
                 val p2 = Intent(this, Popup_p2::class.java)
                 Toast.makeText(this, "Caiste en el planeta Dankn", Toast.LENGTH_SHORT).show()
                 startActivityForResult(p2, 1)
+                hynu.setImageResource(imgcasillas[posj1])
 
             }
             13 -> {
                 val pop3 = Intent(this, Popup_p3::class.java)
                 startActivityForResult(pop3, 1)
+                hynu.setImageResource(imgcasillas[posj1])
+
+
 
             }
             15 -> {
                 val pop4 = Intent(this, Popup_p4::class.java)
                 startActivityForResult(pop4, 1)
+                hynu.setImageResource(imgcasillas[posj1])
 
             }
             20 -> {
                 val pop5 = Intent(this, Popup_p5::class.java)
                 startActivityForResult(pop5, 1)
+                hynu.setImageResource(imgcasillas[posj1])
 
             }
             26 -> {
                 val pop6 = Intent(this, Popup_p6::class.java)
                 startActivityForResult(pop6, 1)
+                hynu.setImageResource(imgcasillas[posj1])
 
             }
             31 -> {
@@ -140,9 +150,10 @@ class Escalera : AppCompatActivity() {
                     //en la posicion del vector se asigna a hynu(imagen) dependiendo donde caiga ps.
                     hynu = casillas[posj1]
                     hynu.setImageResource(drawable.hynu)
+
                     if(posj2!=-1) {
                         //devulevo la posicion de la escalera es decir ahi estaba dank y me va a devolver donde estaba dank el numerito de la escalera.
-                        dank.setImageResource(imgcasillas[posj2])
+                        //dank.setImageResource(imgcasillas[posj2])
                     }
                 }
                 casilla_point()
@@ -157,6 +168,7 @@ class Escalera : AppCompatActivity() {
                     //en la posicion del vector se asigna a dank(imagen) dependiendo donde caiga ps.
                     dank = casillas[posj2]
                     dank.setImageResource(drawable.dank)
+
                     if(posj1!=-1) {
                         //devulevo la posicion de la escalera es decir ahi estaba hynu y me va a devolver donde estaba hynu el numerito de la escalera.
                         hynu.setImageResource(imgcasillas[posj1])
@@ -224,6 +236,8 @@ class Escalera : AppCompatActivity() {
         })
         // start the animation
         dado_player.startAnimation(animation)
+        get_img_dadomaquina()
+
     }
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -250,6 +264,7 @@ class Escalera : AppCompatActivity() {
         })
 
         dado_maquina.startAnimation(animationm)
+        mover(moverplayer = false, avanzar_casillas = random1)
     }
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -321,15 +336,15 @@ class Escalera : AppCompatActivity() {
         //volver a principal
         val btn_dadomaquina = findViewById<ImageView>(id.dado_maquina)
         btn_dadomaquina.setOnClickListener {
-            get_img_dadomaquina()
-            mover(moverplayer = false, avanzar_casillas = random1)
-            QuitarDadoMaquina()
+           /* get_img_dadomaquina()
+
+            QuitarDadoMaquina()*/
         }
         val btn_firstlanzamiento = findViewById<ImageView>(id.primer_lanzamiento)
         btn_firstlanzamiento.setOnClickListener {
             get_img_primerlanzamiento()
             when (random2) {
-                1-> {
+                5-> {
                     Toast.makeText(this, " Haz sacado 5 ahora podras salir", Toast.LENGTH_SHORT).show()
                     primer_lanzamiento.isVisible = false
                     dado_player.isVisible = true
