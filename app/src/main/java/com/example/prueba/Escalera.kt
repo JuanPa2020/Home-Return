@@ -3,6 +3,8 @@ package com.example.prueba
 import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.view.animation.Animation
@@ -69,19 +71,13 @@ class Escalera : AppCompatActivity() {
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     fun QuitarDadoMaquina() {
-        dado_maquina.isEnabled = false
-        dado_player.isEnabled=true
-        Log.d("QuitarDadoMaq", dado_player.toString())
-        Log.d("QuitarDadoMaq", dado_maquina.toString())
+        dado_player.isVisible = true
+        dado_maquina.isVisible = false
     }
 
     fun QuitarDadoPlayer() {
-        /*dado_player.isEnabled = false
-        dado_maquina.isEnabled = true
-        Log.d("QuitarDadopla", dado_player.toString())
-        Log.d("QuitarDadopla", dado_maquina.toString())*/
-
-
+        dado_player.isVisible = false
+        dado_maquina.isVisible = true
     }
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -153,10 +149,10 @@ class Escalera : AppCompatActivity() {
 
                     if(posj2!=-1) {
                         //devulevo la posicion de la escalera es decir ahi estaba dank y me va a devolver donde estaba dank el numerito de la escalera.
-                        //dank.setImageResource(imgcasillas[posj2])
+                        dank.setImageResource(imgcasillas[posj2])
                     }
                 }
-                casilla_point()
+
             }
         } else {
             if (turnom == 1) {
@@ -236,7 +232,6 @@ class Escalera : AppCompatActivity() {
         })
         // start the animation
         dado_player.startAnimation(animation)
-        get_img_dadomaquina()
 
     }
 
@@ -264,8 +259,10 @@ class Escalera : AppCompatActivity() {
         })
 
         dado_maquina.startAnimation(animationm)
-        mover(moverplayer = false, avanzar_casillas = random1)
+
     }
+
+
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -319,9 +316,36 @@ class Escalera : AppCompatActivity() {
         //volver a principal
         val btn_dadoplayer = findViewById<ImageView>(id.dado_player)
         btn_dadoplayer.setOnClickListener {
-            get_img_dadoplayer ()
-            mover(moverplayer = true, avanzar_casillas = random)
-            QuitarDadoPlayer()
+
+
+            val dentroDelMapa= posj1 + random <= 31
+            if ( dentroDelMapa){
+
+                get_img_dadoplayer()
+                mover(moverplayer = true, avanzar_casillas = random)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    casilla_point()
+                }, 3000)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    QuitarDadoPlayer()
+                }, 3000)
+
+                Handler(Looper.getMainLooper()).postDelayed({
+                get_img_dadomaquina()
+                }, 3000)
+
+                mover(moverplayer = false, avanzar_casillas = random1)
+                Handler(Looper.getMainLooper()).postDelayed({
+                    QuitarDadoMaquina()
+                }, 3000)
+
+
+
+            }
+            else{
+                Toast.makeText(this, "Ganaste ", Toast.LENGTH_SHORT).show()
+            }
+
         }
         val ms = findViewById<ImageView>(R.id.musica)
         ms.setOnClickListener {
@@ -334,22 +358,19 @@ class Escalera : AppCompatActivity() {
             startActivity(ajust)
         }
         //volver a principal
-        val btn_dadomaquina = findViewById<ImageView>(id.dado_maquina)
-        btn_dadomaquina.setOnClickListener {
-           /* get_img_dadomaquina()
 
-            QuitarDadoMaquina()*/
-        }
         val btn_firstlanzamiento = findViewById<ImageView>(id.primer_lanzamiento)
         btn_firstlanzamiento.setOnClickListener {
             get_img_primerlanzamiento()
             when (random2) {
                 5-> {
                     Toast.makeText(this, " Haz sacado 5 ahora podras salir", Toast.LENGTH_SHORT).show()
-                    primer_lanzamiento.isVisible = false
-                    dado_player.isVisible = true
-                    dado_maquina.isVisible= true
-                    dado_maquina.isEnabled=true
+                    Handler(Looper.getMainLooper()).postDelayed({
+                        primer_lanzamiento.isVisible = false
+                        dado_player.isVisible = true
+
+                    }, 3000)
+
                 }
                 else -> {
                     Toast.makeText(this, " Necesitas 5 para salir", Toast.LENGTH_SHORT).show()
