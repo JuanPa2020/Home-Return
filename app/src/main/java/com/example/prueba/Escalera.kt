@@ -45,6 +45,8 @@ class Escalera : AppCompatActivity() {
     var random1 = dado()
     var random2 = dado()
 
+    var cambio = 0
+
 
     val casillas: List<ImageView> by lazy {
         listOf<ImageView>(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28,s29,s30,s31)
@@ -70,15 +72,20 @@ class Escalera : AppCompatActivity() {
     }
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    fun QuitarDadoMaquina() {
-        dado_player.isVisible = true
-        dado_maquina.isVisible = false
+    fun QuitarDadoplayer() {
+        dado_maquina.isVisible= true
+        dado_player.isVisible=false
+        Log.d("QuitarDadoMaq", dado_player.toString())
+        Log.d("QuitarDadoMaq", dado_maquina.toString())
     }
 
-    fun QuitarDadoPlayer() {
-        dado_player.isVisible = false
-        dado_maquina.isVisible = true
+    fun QuitarDadoMaquina() {
+        dado_maquina.isVisible= false
+        dado_player.isVisible=true
+        Log.d("QuitarDadoMaq", dado_player.toString())
+        Log.d("QuitarDadoMaq", dado_maquina.toString())
     }
+
 
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -152,6 +159,9 @@ class Escalera : AppCompatActivity() {
                         dank.setImageResource(imgcasillas[posj2])
                     }
                 }
+                Handler(Looper.getMainLooper()).postDelayed({
+                    casilla_point()
+                }, 2000)
 
             }
         } else {
@@ -232,6 +242,14 @@ class Escalera : AppCompatActivity() {
         })
         // start the animation
         dado_player.startAnimation(animation)
+        Handler(Looper.getMainLooper()).postDelayed({
+            QuitarDadoplayer()
+        }, 3000)
+        get_img_dadomaquina()
+        Handler(Looper.getMainLooper()).postDelayed({
+            QuitarDadoMaquina()
+        }, 6000)
+
 
     }
 
@@ -258,7 +276,15 @@ class Escalera : AppCompatActivity() {
             }
         })
 
-        dado_maquina.startAnimation(animationm)
+        Handler(Looper.getMainLooper()).postDelayed({
+            dado_maquina.startAnimation(animationm)
+        }, 3000)
+
+        Handler(Looper.getMainLooper()).postDelayed({
+            mover(moverplayer = false, avanzar_casillas = random1)
+        }, 3000)
+
+
 
     }
 
@@ -316,31 +342,10 @@ class Escalera : AppCompatActivity() {
         //volver a principal
         val btn_dadoplayer = findViewById<ImageView>(id.dado_player)
         btn_dadoplayer.setOnClickListener {
-
-
             val dentroDelMapa= posj1 + random <= 31
             if ( dentroDelMapa){
-
                 get_img_dadoplayer()
                 mover(moverplayer = true, avanzar_casillas = random)
-                Handler(Looper.getMainLooper()).postDelayed({
-                    casilla_point()
-                }, 3000)
-                Handler(Looper.getMainLooper()).postDelayed({
-                    QuitarDadoPlayer()
-                }, 3000)
-
-                Handler(Looper.getMainLooper()).postDelayed({
-                get_img_dadomaquina()
-                }, 3000)
-
-                mover(moverplayer = false, avanzar_casillas = random1)
-                Handler(Looper.getMainLooper()).postDelayed({
-                    QuitarDadoMaquina()
-                }, 3000)
-
-
-
             }
             else{
                 Toast.makeText(this, "Ganaste ", Toast.LENGTH_SHORT).show()
@@ -357,6 +362,8 @@ class Escalera : AppCompatActivity() {
             val ajust = Intent(this, Ajustes::class.java)
             startActivity(ajust)
         }
+
+
         //volver a principal
 
         val btn_firstlanzamiento = findViewById<ImageView>(id.primer_lanzamiento)
@@ -368,6 +375,7 @@ class Escalera : AppCompatActivity() {
                     Handler(Looper.getMainLooper()).postDelayed({
                         primer_lanzamiento.isVisible = false
                         dado_player.isVisible = true
+                        dado_maquina.isVisible= false
 
                     }, 3000)
 
