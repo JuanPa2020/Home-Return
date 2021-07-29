@@ -36,20 +36,16 @@ class Escalera : AppCompatActivity() {
     var posj1 = -1
     var posj2 = -1
 
-    //turno de cada jugador
-    var turno = 0
-    var turnom = 1
-
     //randoms
     var random = dado()
     var random1 = dado()
     var random2 = dado()
 
-    var cambio = 0
 
 
-    val casillas: List<ImageView> by lazy {
-        listOf<ImageView>(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28,s29,s30,s31)
+
+    val casillas by lazy {
+        listOf(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28,s29,s30,s31)
     }
     val imgcasillas by lazy {
         listOf(casilla1, casilla2, casilla3, casiilla4, casilla5, casilla6, casilla7, casilla8, casilla9, casilla10, casilla11, casilla12, casilla13, casilla14, agujero1, casilla16, casilla17, casilla18, casilla19, nave, casilla21, casilla22, casilla23, casilla24, casilla25, agujero2, casilla27, casilla28, casilla29, casilla30, planeta)
@@ -82,6 +78,7 @@ class Escalera : AppCompatActivity() {
     fun QuitarDadoMaquina() {
         dado_maquina.isVisible= false
         dado_player.isVisible=true
+        dado_player.isEnabled=true
         Log.d("QuitarDadoMaq", dado_player.toString())
         Log.d("QuitarDadoMaq", dado_maquina.toString())
     }
@@ -91,6 +88,7 @@ class Escalera : AppCompatActivity() {
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
     fun casilla_point() {
+        dado_player.isEnabled=true
         when (posj1 + 1) {
             2 -> {
                 val pop1 = Intent(this, Popup_p1::class.java)
@@ -143,54 +141,53 @@ class Escalera : AppCompatActivity() {
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     fun mover(moverplayer:Boolean, avanzar_casillas:Int) {
+        dado_player.isEnabled=false
         if (moverplayer) {
-            if (turno == 0) {
-                //nueva posicion
-                Toast.makeText(this, "Hynu avanza " + avanzar_casillas + " casillas", Toast.LENGTH_SHORT).show()
-                posj1 += avanzar_casillas
-                Log.d("posicion_actual", posj1.toString())
-                for (i in casillas) {
-                    //en la posicion del vector se asigna a hynu(imagen) dependiendo donde caiga ps.
-                    hynu = casillas[posj1]
-                    hynu.setImageResource(drawable.hynu)
-
-                    if(posj2!=-1) {
-                        //devulevo la posicion de la escalera es decir ahi estaba dank y me va a devolver donde estaba dank el numerito de la escalera.
-                        dank.setImageResource(imgcasillas[posj2])
-                    }
-                }
-                Handler(Looper.getMainLooper()).postDelayed({
-                    casilla_point()
-                }, 2000)
-
+            //nueva posicion
+            Toast.makeText(this, "Hynu avanza " + avanzar_casillas + " casillas", Toast.LENGTH_SHORT).show()
+            posj1 += avanzar_casillas
+            Log.d("posicion_actual", posj1.toString())
+            if(dado_player.isPressed && posj1!=-1) {
+                //devulevo la posicion de la escalera es decir ahi estaba hynu y me va a devolver donde
+                    // estaba hynu el numerito de la escalera.
+                hynu.setImageResource(drawable.transparente)
             }
+            for (i in casillas) {
+                //en la posicion del vector se asigna a hynu(imagen) dependiendo donde caiga.
+                hynu=casillas[posj1]
+                hynu.setImageResource(drawable.hynu)
+            }
+
+            Handler(Looper.getMainLooper()).postDelayed({
+                casilla_point()
+            }, 2000)
+
         } else {
-            if (turnom == 1) {
-                //nueva posicion
-                posj2 += avanzar_casillas
-                Toast.makeText(this, "Dank avanza "+avanzar_casillas+" casillas", Toast.LENGTH_SHORT).show()
-                /*Toast.makeText(this, "Dank te alcanzo retrosede 3 casilla", Toast.LENGTH_SHORT).show()*/
-                for (i in casillas) {
-                    //en la posicion del vector se asigna a dank(imagen) dependiendo donde caiga ps.
-                    dank = casillas[posj2]
-                    dank.setImageResource(drawable.dank)
-
-                    if(posj1!=-1) {
-                        //devulevo la posicion de la escalera es decir ahi estaba hynu y me va a devolver donde estaba hynu el numerito de la escalera.
-                        hynu.setImageResource(imgcasillas[posj1])
-
-                    }
-                }
-               /* //Profe como poner un casillas[posj1-1] == con casillas[2:29]
-                if(casillas[posj2 - 1]  == casillas[posj1 - 1]   ) {
-                    if(casillas[posj1-1]==casillas[2] || casillas[posj1-1]==casillas[3]){
-                        hynu = casillas[posj1 -1]
-                        hynu.setImageResource(drawable.hynu)
-                    }
-
-                }*/
+            //nueva posicion
+            posj2 += avanzar_casillas
+            Toast.makeText(this, "Dank avanza "+avanzar_casillas+" casillas", Toast.LENGTH_SHORT).show()
+            /*Toast.makeText(this, "Dank te alcanzo retrosede 3 casilla", Toast.LENGTH_SHORT).show()*/
+            if( posj2!=-1) {
+                //devulevo la posicion de la escalera es decir ahi estaba hynu
+                    // y me va a devolver donde estaba hynu el numerito de la escalera.
+                dank.setImageResource(drawable.transparente)
             }
-        }
+            for (i in casillas) {
+                //en la posicion del vector se asigna a dank(imagen) dependiendo donde caiga ps.
+                dank = casillas[posj2]
+                dank.setImageResource(drawable.dank)
+
+            }
+            /* //Profe como poner un casillas[posj1-1] == con casillas[2:29]
+             if(casillas[posj2 - 1]  == casillas[posj1 - 1]   ) {
+                 if(casillas[posj1-1]==casillas[2] || casillas[posj1-1]==casillas[3]){
+                     hynu = casillas[posj1 -1]
+                     hynu.setImageResource(drawable.hynu)
+                 }
+
+             }*/
+            }
+
     }
 
     // -----------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -342,8 +339,9 @@ class Escalera : AppCompatActivity() {
         //volver a principal
         val btn_dadoplayer = findViewById<ImageView>(id.dado_player)
         btn_dadoplayer.setOnClickListener {
+
             val dentroDelMapa= posj1 + random <= 31
-            if ( dentroDelMapa){
+            if (dentroDelMapa){
                 get_img_dadoplayer()
                 mover(moverplayer = true, avanzar_casillas = random)
             }
@@ -352,6 +350,10 @@ class Escalera : AppCompatActivity() {
             }
 
         }
+
+
+
+
         val ms = findViewById<ImageView>(R.id.musica)
         ms.setOnClickListener {
             val es = Intent(this, Musica::class.java)
@@ -385,6 +387,8 @@ class Escalera : AppCompatActivity() {
                 }
             }
         }
+
+
 
     }
 }

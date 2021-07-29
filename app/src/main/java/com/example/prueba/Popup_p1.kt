@@ -3,12 +3,16 @@ package com.example.prueba
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.DisplayMetrics
+import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_popup_p1.*
+import kotlinx.android.synthetic.main.activity_popup_p3.*
 
 class Popup_p1 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,19 +26,16 @@ class Popup_p1 : AppCompatActivity() {
         window.setLayout((ancho * 0.85).toInt(), (alto * 0.7).toInt())
         // Respuesta 1
         val r1= findViewById<Button>(R.id.res)
-        r1.setOnClickListener {
-            respuesta()
-        }
         // Respuesta 2
         val r2= findViewById<Button>(R.id.res1)
-        r2.setOnClickListener {
-            respuesta()
-        }
         // Respuesta 3
         val r3= findViewById<Button>(R.id.res2)
-        r3.setOnClickListener {
+        val clickListener= (View.OnClickListener {
             respuesta()
-        }
+        })
+        r1.setOnClickListener(clickListener)
+        r2.setOnClickListener(clickListener)
+        r3.setOnClickListener(clickListener)
     }
 
     private fun respuesta() {
@@ -54,7 +55,10 @@ class Popup_p1 : AppCompatActivity() {
         val intent = Intent();
         intent.putExtra("result", res.isPressed);
         setResult(Activity.RESULT_OK, intent)
-        finish()
+        Handler(Looper.getMainLooper()).postDelayed({
+            finish()
+        },3000)
+
     }
 
 }
