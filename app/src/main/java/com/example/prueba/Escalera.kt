@@ -28,7 +28,6 @@ class Escalera : AppCompatActivity() {
 
     lateinit var hynu: ImageView
     lateinit var dank: ImageView
-    lateinit var alien: ImageView
     lateinit var animation: Animation
     lateinit var animationm: Animation
 
@@ -41,15 +40,10 @@ class Escalera : AppCompatActivity() {
     var random1 = dado()
     var random2 = dado()
 
-
-
-
     val casillas by lazy {
         listOf(s1,s2,s3,s4,s5,s6,s7,s8,s9,s10,s11,s12,s13,s14,s15,s16,s17,s18,s19,s20,s21,s22,s23,s24,s25,s26,s27,s28,s29,s30,s31)
     }
-    val imgcasillas by lazy {
-        listOf(casilla1, casilla2, casilla3, casiilla4, casilla5, casilla6, casilla7, casilla8, casilla9, casilla10, casilla11, casilla12, casilla13, casilla14, agujero1, casilla16, casilla17, casilla18, casilla19, nave, casilla21, casilla22, casilla23, casilla24, casilla25, agujero2, casilla27, casilla28, casilla29, casilla30, planeta)
-    }
+
     val lanzamiento1 by lazy {
         listOf(d1, d2, d3, d4, d5, d6)
     }
@@ -62,7 +56,7 @@ class Escalera : AppCompatActivity() {
 
     fun dado():Int{
 
-        var random =Random().nextInt(5) + 1
+        var random =Random().nextInt(6) + 1
         Log.d("MiLog", random.toString())
         return random
     }
@@ -94,40 +88,37 @@ class Escalera : AppCompatActivity() {
                 val pop1 = Intent(this, Popup_p1::class.java)
                 Toast.makeText(this, "Caiste en el planeta Dankn", Toast.LENGTH_SHORT).show()
                 startActivityForResult(pop1, 0)
-                hynu.setImageResource(imgcasillas[posj1])
+                hynu.setImageResource(drawable.transparente)
 
             }
             7 -> {
                 val p2 = Intent(this, Popup_p2::class.java)
                 Toast.makeText(this, "Caiste en el planeta Dankn", Toast.LENGTH_SHORT).show()
                 startActivityForResult(p2, 1)
-                hynu.setImageResource(imgcasillas[posj1])
+                hynu.setImageResource(drawable.transparente)
 
             }
             13 -> {
                 val pop3 = Intent(this, Popup_p3::class.java)
-                startActivityForResult(pop3, 1)
-                hynu.setImageResource(imgcasillas[posj1])
-
-
-
+                startActivityForResult(pop3,1)
+                hynu.setImageResource(drawable.transparente)
             }
             15 -> {
                 val pop4 = Intent(this, Popup_p4::class.java)
                 startActivityForResult(pop4, 1)
-                hynu.setImageResource(imgcasillas[posj1])
+                hynu.setImageResource(drawable.transparente)
 
             }
             20 -> {
                 val pop5 = Intent(this, Popup_p5::class.java)
                 startActivityForResult(pop5, 1)
-                hynu.setImageResource(imgcasillas[posj1])
+                hynu.setImageResource(drawable.transparente)
 
             }
             26 -> {
                 val pop6 = Intent(this, Popup_p6::class.java)
                 startActivityForResult(pop6, 1)
-                hynu.setImageResource(imgcasillas[posj1])
+                hynu.setImageResource(drawable.transparente)
 
             }
             31 -> {
@@ -138,7 +129,7 @@ class Escalera : AppCompatActivity() {
             }
         }
     }
-    //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+    //---------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     fun mover(moverplayer:Boolean, avanzar_casillas:Int) {
         dado_player.isEnabled=false
@@ -285,8 +276,6 @@ class Escalera : AppCompatActivity() {
 
     }
 
-
-
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
     //-----------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -301,7 +290,6 @@ class Escalera : AppCompatActivity() {
             } else if (respuesta_incorrecta==false){
                 mover(moverplayer = true, avanzar_casillas = -1)
             }
-
         }
         if (requestCode == 1) {
             val respuesta_incorrecta = data?.getBooleanExtra("result", false)

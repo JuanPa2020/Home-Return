@@ -3,7 +3,10 @@ package com.example.prueba
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.util.DisplayMetrics
+import android.view.View
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.Button
@@ -22,22 +25,17 @@ class Popup_p3 : AppCompatActivity() {
         window.setLayout((ancho * 0.85).toInt(), (alto * 0.7).toInt())
         // Respuesta 1
         val r1= findViewById<Button>(R.id.r)
-        r1.setOnClickListener {
-            respuesta()
-            onBackPressed()
-        }
         // Respuesta 2
         val r2= findViewById<Button>(R.id.r1)
-        r2.setOnClickListener {
-            respuesta()
-            onBackPressed()
-        }
         // Respuesta 3
         val r3= findViewById<Button>(R.id.r2)
-        r3.setOnClickListener {
+        val clickListener= (View.OnClickListener {
             respuesta()
-            onBackPressed()
-        }
+        })
+        r1.setOnClickListener(clickListener)
+        r2.setOnClickListener(clickListener)
+        r3.setOnClickListener(clickListener)
+
     }
 
     private fun respuesta() {
@@ -56,7 +54,9 @@ class Popup_p3 : AppCompatActivity() {
         val intent = Intent();
         intent.putExtra("result", r.isPressed);
         setResult(Activity.RESULT_OK, intent)
-        finish()
+        Handler(Looper.getMainLooper()).postDelayed({
+            finish()
+        },3000)
     }
 
 }
